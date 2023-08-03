@@ -53,331 +53,8 @@
     
       
     <main class="content on">
-      
-<section class="cover">
-    
-  <div class="cover-frame">
-    <div class="bg-box">
-      <img src="https://www.wallpaperhub.app/_next/image?url=https%3A%2F%2Fcdn.wallpaperhub.app%2Fcloudcache%2F1%2F2%2Fe%2Fe%2F8%2F7%2F12ee870b78e73669737a984974a2e84bd726c69f.jpg&w=2496&h=1664&q=100" alt="image frame" />
-    </div>
-    <div class="cover-inner text-center text-white">
-      <h1><a href="/">Hexo</a></h1>
-      <div id="subtitle-box">
-        
-        <span id="subtitle"></span>
-        
-      </div>
-      <div>
-        
-      </div>
-    </div>
-  </div>
-  <div class="cover-learn-more">
-    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
-  </div>
-</section>
-
-
-
-<script src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js"></script>
-
-
-<!-- Subtitle -->
-
-  <script>
-    try {
-      var typed = new Typed("#subtitle", {
-        strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
-        startDelay: 0,
-        typeSpeed: 200,
-        loop: true,
-        backSpeed: 100,
-        showCursor: true
-      });
-    } catch (err) {
-      console.log(err)
-    }
-  </script>
-  
-<div id="main">
-  <section class="outer">
-  
-  
-  
-
-<div class="notice" style="margin-top:50px">
-    <i class="ri-heart-fill"></i>
-    <div class="notice-content" id="broad"></div>
-</div>
-<script type="text/javascript">
-    fetch('https://v1.hitokoto.cn')
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("broad").innerHTML = data.hitokoto;
-        })
-        .catch(console.error)
-</script>
-
-<style>
-    .notice {
-        padding: 20px;
-        border: 1px dashed #e6e6e6;
-        color: #969696;
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        background: #fbfbfb50;
-        border-radius: 10px;
-    }
-
-    .notice i {
-        float: left;
-        color: #999;
-        font-size: 16px;
-        padding-right: 10px;
-        vertical-align: middle;
-        margin-top: -2px;
-    }
-
-    .notice-content {
-        display: initial;
-        vertical-align: middle;
-    }
-</style>
-  
-  <article class="articles">
-    
-    
-    
-    
-    <article
-  id="post-aubo机械臂"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2023/08/03/aubo%E6%9C%BA%E6%A2%B0%E8%87%82/" class="article-date">
-  <time datetime="2023-08-03T08:28:21.473Z" itemprop="datePublished">2023-08-03</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="机械臂视觉调试"><a href="#机械臂视觉调试" class="headerlink" title="机械臂视觉调试"></a>机械臂视觉调试</h1><h2 id="D435相机驱动安装"><a href="#D435相机驱动安装" class="headerlink" title="D435相机驱动安装"></a>D435相机驱动安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">注册服务器公钥</span></span><br><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">添加服务器到本机repository</span></span><br><span class="line">sudo add-apt-repository &quot;deb https://librealsense.intel.com/Debian/apt-repo $(lsb_release -cs) main&quot; -u</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装库文件</span></span><br><span class="line">sudo apt-get install librealsense2-dkms</span><br><span class="line">sudo apt-get install librealsense2-utils</span><br><span class="line">sudo apt-get install librealsense2-dev</span><br><span class="line">sudo apt-get install librealsense2-dbg</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装完成后，连接D435i相机到电脑的USB3.0的端口，使用以下命令行启动</span></span><br><span class="line">realsense-viewer</span><br><span class="line">启动后图像如下：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5p2w5bC85ZCb,size_20,color_FFFFFF,t_70,g_se,x_16.png" alt="img"></p>
-<h2 id="D435相机内参标定"><a href="#D435相机内参标定" class="headerlink" title="D435相机内参标定"></a>D435相机内参标定</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">D435相机内参标定</span></span><br><span class="line">cd smsc_ws/ &amp;&amp; source devel/setup.bash</span><br><span class="line">roslaunch realsense2_camera rs_camera.launch</span><br><span class="line">cd catkin_ws/ &amp;&amp; source devel/setup.bash</span><br><span class="line">rosrun camera_calibration cameracalibrator.py --size 11x9 --square 0.02 image:=/camera/color/image_raw</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">标定板</span></span><br><span class="line">在/tmp目录下得到calibration.tar.gz或者在终端看数据填入下面</span><br><span class="line">cd ~/smsc_ws/src/easy_handeye/easy_handeye/yaml/&amp;&amp;gedit rs.yaml</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#相机内参</span></span><br><span class="line"><span class="attr">image_width:</span> <span class="number">640</span></span><br><span class="line"><span class="attr">image_height:</span> <span class="number">480</span></span><br><span class="line"><span class="attr">camera_name:</span> <span class="string">camera_color_optical_frame</span></span><br><span class="line"><span class="attr">camera_matrix:</span></span><br><span class="line">  <span class="attr">rows:</span> <span class="number">3</span></span><br><span class="line">  <span class="attr">cols:</span> <span class="number">3</span></span><br><span class="line">  <span class="attr">data:</span> [<span class="number">925.55758</span>,   <span class="number">0</span><span class="string">.</span>     , <span class="number">622.18052</span>,</span><br><span class="line">           <span class="number">0</span><span class="string">.</span>     , <span class="number">922.53117</span>, <span class="number">362.88402</span>,</span><br><span class="line">           <span class="number">0</span><span class="string">.</span>     ,   <span class="number">0</span><span class="string">.</span>     ,   <span class="number">1</span><span class="string">.</span>     ]</span><br><span class="line"><span class="attr">distortion_model:</span> <span class="string">plumb_bob</span></span><br><span class="line"><span class="attr">distortion_coefficients:</span></span><br><span class="line">  <span class="attr">rows:</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">cols:</span> <span class="number">5</span></span><br><span class="line">  <span class="attr">data:</span> [<span class="number">0.129438</span>, <span class="number">-0.252652</span>, <span class="number">0.001532</span>, <span class="number">-0.003281</span>, <span class="number">0.000000</span>]</span><br><span class="line"><span class="attr">rectification_matrix:</span></span><br><span class="line">  <span class="attr">rows:</span> <span class="number">3</span></span><br><span class="line">  <span class="attr">cols:</span> <span class="number">3</span></span><br><span class="line">  <span class="attr">data:</span> [<span class="number">1</span><span class="string">.</span>, <span class="number">0</span><span class="string">.</span>, <span class="number">0</span><span class="string">.</span>,</span><br><span class="line">         <span class="number">0</span><span class="string">.</span>, <span class="number">1</span><span class="string">.</span>, <span class="number">0</span><span class="string">.</span>,</span><br><span class="line">         <span class="number">0</span><span class="string">.</span>, <span class="number">0</span><span class="string">.</span>, <span class="number">1</span><span class="string">.</span>]</span><br><span class="line"><span class="attr">projection_matrix:</span></span><br><span class="line">  <span class="attr">rows:</span> <span class="number">3</span></span><br><span class="line">  <span class="attr">cols:</span> <span class="number">4</span></span><br><span class="line">  <span class="attr">data:</span> [<span class="number">927.95349</span>,   <span class="number">0</span><span class="string">.</span>     , <span class="number">614.78602</span>,   <span class="number">0</span><span class="string">.</span>     ,</span><br><span class="line">           <span class="number">0</span><span class="string">.</span>     , <span class="number">938.40771</span>, <span class="number">363.14088</span>,   <span class="number">0</span><span class="string">.</span>     ,</span><br><span class="line">           <span class="number">0</span><span class="string">.</span>     ,   <span class="number">0</span><span class="string">.</span>     ,   <span class="number">1</span><span class="string">.</span>     ,   <span class="number">0</span><span class="string">.</span>     ]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#D435相机位置标定</span></span><br><span class="line"><span class="comment">#先确定机械臂网络和AGV可以ping通</span></span><br><span class="line"><span class="built_in">cd</span> smsc_ws/ &amp;&amp; <span class="built_in">source</span> devel/setup.bash</span><br><span class="line">roslaunch easy_handeye auboe5.launch </span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> smsc_ws/ &amp;&amp; <span class="built_in">source</span> devel/setup.bash</span><br><span class="line">roslaunch easy_handeye auboe5_realsense_calibration.launch</span><br><span class="line"><span class="comment">#这里需要修改这个launch文件，修改对应的标定板和大小</span></span><br><span class="line">rqt_image_view </span><br><span class="line"><span class="comment">#每次至少移动机械臂三个轴，每次都需要看到标定板的坐标，需要采集30次</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#相机外参</span><br><span class="line">translation: </span><br><span class="line">  x: -0.0534796664023743</span><br><span class="line">  y: 0.06913598457328446</span><br><span class="line">  z: -0.10301046001842107</span><br><span class="line">rotation: </span><br><span class="line">  x: -0.1855626017933431</span><br><span class="line">  y: -0.6840880920811412</span><br><span class="line">  z: -0.19574654818435297</span><br><span class="line">  w: 0.6776970502830747</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tf</span><br><span class="line"><span class="comment">#四元数转欧拉角</span></span><br><span class="line"><span class="comment">#(r, p, y) = tf.transformations.euler_from_quaternion([msg.orientation.x, msg.orientation.y, msg.orientation.z, msg.orientation.w])</span></span><br><span class="line"><span class="comment">#将xyzw填入</span></span><br><span class="line">(r, p, y) = tf.transformations.euler_from_quaternion([-<span class="number">0.25109681527217653</span>,-<span class="number">0.6628727507785745</span>,<span class="number">0.25428660505033535</span>, <span class="number">0.6579425720588317</span>])</span><br><span class="line"><span class="built_in">print</span>((r, p, y))</span><br><span class="line"><span class="comment">#获得rpy填到下面的launch</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>将x y z r p y填入下面启动launch</p>
-<p>在rviz中查看tf的位置：wrist3_Link和 camera_link1的位置 与现实差别 </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd ~/smsc_ws/src/smsc_robot/launch</span><br><span class="line">gedit tf.launch</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">复制下面内容并修改对应的x y z r p y</span></span><br><span class="line">roslaunch smsc_robot tf.launch</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">在rviz中查看wrist3_Link和 camera_link1的相对位置</span></span><br></pre></td></tr></table></figure>
-
-<p>如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&#x27;1.0&#x27; encoding=&#x27;utf-8&#x27;?&gt;</span><br><span class="line">&lt;launch&gt;</span><br><span class="line">    &lt;node pkg=&quot;tf&quot; type=&quot;static_transform_publisher&quot; name=&quot;link1_broadcaster0&quot; args=&quot;-0.03651419330921341 0.06358615613497966 -0.07804552615760643  2.2752539233947484 -1.5473105169501347 -3.111237611232548 wrist3_Link camera_link1  100&quot; /&gt;  </span><br><span class="line"></span><br><span class="line">&lt;/launch&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="机械臂内外参测试"><a href="#机械臂内外参测试" class="headerlink" title="机械臂内外参测试"></a>机械臂内外参测试</h2><p>将相机的外参填入相机手眼标定的欧拉角转四元数,欧拉角(rpy),四元数(w, x, y, z)</p>
-<p>#相机外参<br>translation:<br>  x: -0.0534796664023743<br>  y: 0.06913598457328446<br>  z: -0.10301046001842107<br>rotation:<br>  x: -0.1855626017933431<br>  y: -0.6840880920811412<br>  z: -0.19574654818435297<br>  w: 0.6776970502830747</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ~/smsc_ws/src/smsc_robot/scripts</span><br><span class="line">gedit robot_yolo_left.py</span><br><span class="line">#注意rotation中w是在后面，将下面的相机外参填入下面</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#265行</span></span><br><span class="line">T_WristToCam = self.Pose_To_HomTranMatrix([-<span class="number">0.03150420606598359</span>,<span class="number">0.06662157140173025</span>,-<span class="number">0.0283905014124696</span>], [<span class="number">0.6579425720588317</span>,-<span class="number">0.25109681527217653</span>,-<span class="number">0.6628727507785745</span>,-<span class="number">0.25428660505033535</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="新能源小车配置任务一-任务二环境"><a href="#新能源小车配置任务一-任务二环境" class="headerlink" title="新能源小车配置任务一&#x2F;任务二环境"></a>新能源小车配置任务一&#x2F;任务二环境</h2><h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><p>终端：pip3 install –upgrade pip</p>
-<p>在requirements.txt文件下面右键打开终端输入：pip3 install -r requirements.txt</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">requests</span><br><span class="line">pycryptodome</span><br><span class="line">cryptography==2.5</span><br><span class="line">python-miio</span><br><span class="line">scikit-build</span><br><span class="line">opencv-python</span><br><span class="line">pyqt5</span><br><span class="line">pyseria</span><br><span class="line">numpy</span><br><span class="line">empy</span><br><span class="line">baidu-aip</span><br></pre></td></tr></table></figure>
-
-<h3 id="环境检测模块"><a href="#环境检测模块" class="headerlink" title="环境检测模块"></a>环境检测模块</h3><ul>
-<li><input checked="" disabled="" type="checkbox"> 烧写下位机程序</li>
-<li><input checked="" disabled="" type="checkbox"> 测试模块是否正常</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#给端口权限</span><br><span class="line">sudo chmod 777 /dev/ttyACM0 </span><br><span class="line">#usb连接环境监测模块；然后启动</span><br><span class="line"></span><br><span class="line">roslaunch qitijiance qiheyi.launch</span><br><span class="line"></span><br><span class="line">rostopic echo /sensor_data </span><br></pre></td></tr></table></figure>
-
-<p>有持续数据</p>
-<h3 id="小米物联网开关配置及测试"><a href="#小米物联网开关配置及测试" class="headerlink" title="小米物联网开关配置及测试"></a>小米物联网开关配置及测试</h3><p>安装依赖</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install -r requirements.txt</span><br></pre></td></tr></table></figure>
-
-<p>手机下载米家，连接物联网插座—略</p>
-<p>重新开启终端；运行python文件。</p>
-<p>python3 token_extractor.py</p>
-<p>输入账号密码—上面米家的账号密码</p>
-<p>输入cn</p>
-<p>得到物联网控制IP和token</p>
-<p>连接到与物联网开关相同的局域网</p>
-<p>配置控制脚本—修改ip和token</p>
-<p><img src="/image-20230208144949554.png" alt="image-20230208144949554"></p>
-<p><img src="/image-20230208145006944.png" alt="image-20230208145006944"></p>
-<p>在当前功能包下，右键打开终端运行脚本：</p>
-<p>开启&#x2F;关闭</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh open.sh</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh close</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="云台配置"><a href="#云台配置" class="headerlink" title="云台配置"></a>云台配置</h3><p>由于新能源小车的激光雷达和云台相机都是接到路由器中，只有一个网口接到新能源小车，需要将云台相机的ip地址修改成192.168.1.64网段</p>
-<p>第一次云台配置</p>
-<p>首先需要进入云台后端：</p>
-<p>先连接上云台，浏览器输入192.168.5.64</p>
-<p>用户名：admin</p>
-<p>密码：abcd1234</p>
-<p>进入网络设置进行配置，配置如下</p>
-<p>192.168.1.64</p>
-<p>255.255.255.0</p>
-<p>192.168.1.1</p>
-<p>然后修改IP：</p>
-<p>gedit hg_canera.launch</p>
-<p>修改IP地址为192.168.1.64</p>
-<p>最后配置有线连接：</p>
-<p>有线网络IP配置：192.168.1.102   </p>
-<p>网关配置：255.255.255.0</p>
-<p>端口：192.168.1.1</p>
-<p>启动launch:</p>
-<p>roslaunch pan_tilt_camera hg_camera.launch</p>
-<p>有云台图像</p>
-<h3 id="webviz环境配置"><a href="#webviz环境配置" class="headerlink" title="webviz环境配置"></a>webviz环境配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#预备工作</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install build-essential libssl-dev</span><br><span class="line">#在 ~/.bashrc 中添加下列语句</span><br><span class="line">export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node</span><br><span class="line">cd ~/nvm-master&amp;&amp;./install.sh</span><br><span class="line">#安装指定版本的node</span><br><span class="line">nvm install 10.19.0</span><br><span class="line">#查看当前的node版本</span><br><span class="line">nvm current</span><br><span class="line">#查看已安装的node版本</span><br><span class="line">nvm list</span><br><span class="line">#选择需要的node版本</span><br><span class="line">nvm use 10.19.0</span><br><span class="line">#更换npm源为淘宝的源</span><br><span class="line">npm config set registry https://registry.npm.taobao.org</span><br><span class="line">#检查是否配置成功</span><br><span class="line">npm config get registry</span><br><span class="line">cd ~/webviz</span><br><span class="line">#建议先手动安装node-sass</span><br><span class="line">npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/</span><br><span class="line">npm install node-sass</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#执行脚本安装项目依赖</span><br><span class="line">cd ~/webviz</span><br><span class="line">npm run bootstrap</span><br><span class="line">npm run build</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="AGV环境配置："><a href="#AGV环境配置：" class="headerlink" title="AGV环境配置："></a>AGV环境配置：</h2><h3 id="python2-7安装pip2"><a href="#python2-7安装pip2" class="headerlink" title="python2.7安装pip2"></a>python2.7安装pip2</h3><ul>
-<li>检查python2是否安装</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 --version</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>获取get-pip.py</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>安装pip</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 get-pip.py</span><br></pre></td></tr></table></figure>
-
-<p>安装transforms3d</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install transforms3d</span><br></pre></td></tr></table></figure>
-
-<h3 id="一键安装换源和rosdep"><a href="#一键安装换源和rosdep" class="headerlink" title="一键安装换源和rosdep"></a>一键安装换源和rosdep</h3><p>按照提示完成换源和rosdep，运行两次即可</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://fishros.com/install -O fishros &amp;&amp; bash fishros</span><br></pre></td></tr></table></figure>
-
-<h3 id="功能包编译"><a href="#功能包编译" class="headerlink" title="功能包编译"></a>功能包编译</h3><p>smsc_ws功能包编译</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#依赖安装</span><br><span class="line">rosdep install --from-paths src --ignore-src -r -y</span><br><span class="line">#python2编译</span><br><span class="line">catkin_make</span><br></pre></td></tr></table></figure>
-
-<p>catkin_ws功能包编译</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#依赖安装</span><br><span class="line">rosdep install --from-paths src --ignore-src -r -y</span><br><span class="line">#python3编译</span><br><span class="line">catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="任务一："><a href="#任务一：" class="headerlink" title="任务一："></a>任务一：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">启动底盘</span></span><br><span class="line">rosrun hunter_bringup bringup_can2usb.bash</span><br><span class="line">roslaunch hunter_bringup hunter_robot_base.launch</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">启动websocket</span></span><br><span class="line">roslaunch rosbridge_server rosbridge_websocket.launch </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">启动导航</span></span><br><span class="line">roslaunch mapping_and_nav real_navigation.launch </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">启动webviz</span></span><br><span class="line">cd webviz/</span><br><span class="line">npm run cloud-platform</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">启动任务文件</span></span><br><span class="line">python3 ~/api_ws/api/src/task_one.py</span><br></pre></td></tr></table></figure>
-
-<h2 id="任务二："><a href="#任务二：" class="headerlink" title="任务二："></a>任务二：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">启动底盘</span></span><br><span class="line">rosrun hunter_bringup bringup_can2usb.bash</span><br><span class="line">roslaunch hunter_bringup hunter_robot_base.launch</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">启动websocket</span></span><br><span class="line">roslaunch rosbridge_server rosbridge_websocket.launch </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">启动导航</span></span><br><span class="line">roslaunch mapping_and_nav real_navigation.launch </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">启动webviz</span></span><br><span class="line">cd webviz/</span><br><span class="line">npm run cloud-platform</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">启动任务文件</span></span><br><span class="line">python3 ~/api_ws/api/src/task_two.py</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">需要修改导航点</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="任务三："><a href="#任务三：" class="headerlink" title="任务三："></a>任务三：</h2><h3 id="window主机"><a href="#window主机" class="headerlink" title="window主机"></a>window主机</h3><p>首先将所有工控机连接到一个局域网上，</p>
-<p>查询window主机IP地址:win+R； 输入:cmd；再输入：ipconfig</p>
-<p><img src="/wps1.jpg" alt="img"> </p>
-<p>得到IPv4地址为：10.0.10.237</p>
-<p>打开mosquitto所在位置，在上方文件路径输入cmd；</p>
-<p>再输入：mosquitto -c mosquitto.conf -v；开启服务器端口。</p>
-<p>打开中控文件夹：输入cmd；再输入:python Socket_Server.py运行。</p>
-<p>再输入cmd;输入:python ZY_MainGUI.py;打开中控界面。</p>
-<p>输入账号：admin;密码：123456；IP地址：window主机的IPv4的地址，端口是50002</p>
-<p>点击登录</p>
-<p><img src="/wps2.png" alt="img"> </p>
-<h3 id="岸吊启动"><a href="#岸吊启动" class="headerlink" title="岸吊启动"></a>岸吊启动</h3><p>打开终端输入并运行:roslaunch ad_palletizing AD_Palletizing.launch</p>
-<p>打开终端输入并运行:roslaunch ad_palletizing ZY_AD.launch</p>
-<h3 id="新能源小车"><a href="#新能源小车" class="headerlink" title="新能源小车"></a>新能源小车</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">环境</span></span><br><span class="line">rosrun hunter_bringup bringup_can2usb.bash</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">底盘</span></span><br><span class="line">roslaunch hunter_bringup hunter_robot_base.launch</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">建图</span></span><br><span class="line">roslaunch mapping_and_nav real_mapping.launch</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">保存地图</span></span><br><span class="line">roslaunch mapping_and_nav save_map.launch</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">可以修改launch里的 地图保存路径</span> </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">修改地图</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">打开GNU，去除多余的黑线</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">环境</span></span><br><span class="line">rosrun hunter_bringup bringup_can2usb.bash</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">底盘</span></span><br><span class="line">roslaunch hunter_bringup hunter_robot_base.launch</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">导航</span></span><br><span class="line">roslaunch mapping_and_nav real_navigation.launch</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">中控：注意修改IP</span></span><br><span class="line">roslaunch ZY_Auto_PKG ZY_Auto.launch</span><br></pre></td></tr></table></figure>
-
-<h3 id="AGV-机械臂"><a href="#AGV-机械臂" class="headerlink" title="AGV+机械臂"></a>AGV+机械臂</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">目前基于岸吊版本</span></span><br><span class="line">cd catkin_ws/ &amp;&amp; source devel/setup.bash</span><br><span class="line">roslaunch yolov5_ros yolov5_medical.launch </span><br><span class="line">cd smsc_ws/ &amp;&amp; source devel/setup.bash</span><br><span class="line">roslaunch smsc_robot smsc_robot.launch</span><br><span class="line">cd smsc_ws/ &amp;&amp; source devel/setup.bash</span><br><span class="line">roslaunch arv_navigation amcl_demo_smsc.launch </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">标定地图</span></span><br><span class="line">rviz</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">sh</span></span><br><span class="line">rostopic pub -1 /agv_nav_point std_msgs/Int32 &quot;data: 0&quot; </span><br><span class="line">rostopic pub -1 /aubo_con std_msgs/Int32 &quot;data: 0&quot; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="国赛任务启动"><a href="#国赛任务启动" class="headerlink" title="国赛任务启动"></a>国赛任务启动</h3><h4 id="任务一"><a href="#任务一" class="headerlink" title="任务一"></a>任务一</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#cd catkin_ws &amp;&amp; source devel/setup.bash</span></span><br><span class="line"><span class="comment">#环境</span></span><br><span class="line">rosrun hunter_bringup bringup_can2usb.bash</span><br><span class="line"><span class="comment">#底盘</span></span><br><span class="line">roslaunch hunter_bringup hunter_robot_base.launch</span><br><span class="line"><span class="comment">#启动云台相机</span></span><br><span class="line">roslaunch pan_tilt_camera hg_camera.launch</span><br><span class="line"><span class="comment">#启动yolo识别</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#启动写好的任务一程序</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>任务二</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#环境</span></span><br><span class="line">rosrun hunter_bringup bringup_can2usb.bash</span><br><span class="line"><span class="comment">#底盘</span></span><br><span class="line">roslaunch hunter_bringup hunter_robot_base.launch</span><br><span class="line"><span class="comment">#启动云台相机</span></span><br><span class="line">roslaunch pan_tilt_camera hg_camera.launch</span><br><span class="line"><span class="comment">#启动yolo识别</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#启动写好的任务一程序</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>任务三</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#新能源转运车</span></span><br><span class="line"><span class="comment">#环境</span></span><br><span class="line">rosrun hunter_bringup bringup_can2usb.bash</span><br><span class="line"><span class="comment">#底盘</span></span><br><span class="line">roslaunch hunter_bringup hunter_robot_base.launch</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动写好的任务三程序</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#智能载运模块</span></span><br><span class="line"><span class="comment">#启动智能载运模块</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#启动ar码摄像头识别程序</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#启动写好的任务三程序</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#AGV部分---启动机械臂</span></span><br><span class="line"><span class="comment">#启动底盘</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#启动ar码摄像头识别程序</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#启动写好的任务三程序</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-深度强化学习仿真"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2023/08/03/%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%BB%BF%E7%9C%9F/"
-    >深度强化学习.md</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2023/08/03/%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%BB%BF%E7%9C%9F/" class="article-date">
-  <time datetime="2023-08-03T08:20:15.000Z" itemprop="datePublished">2023-08-03</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-   
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
+      <section class="outer">
+  <article
   id="post-机器人功能表"
   class="article article-type-post"
   itemscope
@@ -389,9 +66,34 @@
     <div class="article-meta">
       <a href="/2023/08/03/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8A%9F%E8%83%BD%E8%A1%A8/" class="article-date">
   <time datetime="2023-08-03T02:41:55.809Z" itemprop="datePublished">2023-08-03</time>
-</a>    
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">4.3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">21 min</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
       
+    <div class="tocbot"></div>
+
+
+
+
+  
     <div class="article-entry" itemprop="articleBody">
        
   <h2 id="机器人功能表"><a href="#机器人功能表" class="headerlink" title="机器人功能表"></a>机器人功能表</h2><h2 id="1-键盘控制"><a href="#1-键盘控制" class="headerlink" title="1.键盘控制"></a>1.键盘控制</h2><p>&#x2F;&#x2F;需要先开启初始化节点（仅在单独开启键盘控制时需要开启 运行功能时已包括初始化节点 不需要重复开启）<br>roslaunch turn_on_wheeltec_robot turn_on_wheeltec_robot.launch<br>&#x2F;&#x2F;开启键盘控制节点<br>roslaunch wheeltec_robot_rc keyboard_teleop.launch</p>
@@ -454,29 +156,158 @@
  
       <!-- reward -->
       
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
     </div>
     
 
     <!-- copyright -->
     
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
     <footer class="article-footer">
        
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/08/03/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8A%9F%E8%83%BD%E8%A1%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
     </footer>
   </div>
 
+   
+  <nav class="article-nav">
     
+      <a href="/2023/08/03/%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%BB%BF%E7%9C%9F/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            深度强化学习.md
+          
+        </div>
+      </a>
+    
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.staticfile.org/valine/1.4.16/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "NLEVrQuwQjErVD403ladwiN9-gzGzoHsz",
+    app_key: "3nNVkS4EecZmc6vTmh488ZJt",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
  
+   
     
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
 </article>
 
-    
-  </article>
-  
-
-  
 </section>
-</div>
-
       <footer class="footer">
   <div class="outer">
     <ul>
@@ -624,6 +455,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link
